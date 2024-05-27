@@ -1,0 +1,127 @@
+{
+  "plans": [
+    {
+      "name": "Standard",
+      "price": "$2,995 / 30 active days*",
+      "recommended": "Best for basic tasks",
+      "idealFor": "We cover all the basics for you",
+      "weeklyRequests": "up to 3",
+      "requestComplexity": "basic",
+      "design_examples": [
+        "Basic design requests",
+        "Social media visuals",
+        "Graphics, Flyer and banners",
+        "Logo and CI design",
+        "Basic Image editing & Icons",
+        "Brand guidelines & media kit",
+        "Landing pages",
+        "Low-fidelity wireframes",
+        "UI/UX design"
+      ],
+      "dev_examples": [
+        "Basic software requests",
+        "Website updates",
+        "Basic Forms",
+        "Figma to Code",
+        "Bug fixes",
+        "Email templates",
+        "SEO & Landing pages",
+        "Mobile responsiveness",
+        "Framer, Webflow, WordPress",
+        "Blog & content updates",
+        "Cookie banner"
+      ],
+      "support": "Email support",
+      "calls": "1 call / month",
+      "pauseFeature": true,
+      "parallelRequests": "max. 1"
+    },
+    {
+      "name": "Pro+",
+      "price": "$4,995 / 30 active days*",
+      "recommended": "Best for advanced tasks",
+      "idealFor": "Feels like a senior team member",
+      "weeklyRequests": "up to 6",
+      "requestComplexity": "basic - advanced",
+      "design_examples": [
+        "Advanced design requests",
+        "High-fidelity wireframes",
+        "Infographics and Illustrations",
+        "Basic Animations",
+        "Advanced image editing",
+        "Prototyping",
+        "Complex icons",
+        "Pitch decks and Whitepapers",
+        "Advanced User flows"
+      ],
+      "dev_examples": [
+        "Advanced software requests",
+        "Basic AI integrations",
+        "Multi-page websites",
+        "Backend and API integrations",
+        "Full stack development",
+        "Web Scraping",
+        "Custom Forms and Validation",
+        "SEO optimization",
+        "Performance and Security",
+        "Domain & DNS setup",
+        "Workflow automations",
+        "Analytics & Tracking",
+        "Basic blockchain integration",
+        "Technical documentation"
+      ],
+      "support": "Priority (within 24h)",
+      "calls": "1 call / week",
+      "pauseFeature": true,
+      "parallelRequests": "max. 1"
+    },
+    {
+      "name": "Expert",
+      "price": "$6,995 / 30 active days*",
+      "recommended": "best for complex tasks",
+      "idealFor": "Feels like a 10x team member",
+      "weeklyRequests": "up to 12",
+      "requestComplexity": "basic - complex",
+      "design_examples": [
+        "Complex design requests",
+        "Interactive prototypes & MVPs",
+        "Interactive Infographics",
+        "Custom Data visualization",
+        "Complex illustrations",
+        "Custom 3D design",
+        "Animated logos",
+        "Animated Icons",
+        "Custom animations"
+      ],
+      "dev_examples": [
+        "Complex software requests",
+        "Architecture review / design",
+        "Custom AI enabled features",
+        "Custom web3 integration",
+        "Custom Onboarding flows",
+        "Authentication & Authorization",
+        "Custom Payment integrations",
+        "Complex Web Scraping",
+        "Complex backend integration",
+        "Complex multistep forms",
+        "Data Migration & Cleaning",
+        "Cloud infrastructure & scaling",
+        "Complex database setups",
+        "Complex automations",
+        "Custom 3D experiences",
+        "Custom mobile app",
+        "browser games"
+      ],
+      "support": "Priority (within 12h)",
+      "calls": "2 calls / week",
+      "pauseFeature": true,
+      "parallelRequests": "max. 2"
+    }
+  ],
+  "addOns": [
+    "One-time fastlane boost: €250 one time fee for 24h delivery of basic requests (limited availability)",
+    "Additional call: €50 / 15min",
+    "One-time advanced task: €500",
+    "One-time complex task: Scope-based pricing"
+  ]
+}
