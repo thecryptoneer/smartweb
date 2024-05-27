@@ -17,7 +17,6 @@
         "@mui/material": "^5.15.18",
         "@react-three/drei": "^9.5.3",
         "@react-three/fiber": "^8.13.6",
-        "@react-three/flex": "0.6.0",
         "@react-three/postprocessing": "^2.16.2",
         "autoprefixer": "^10.4.19",
         "glsl-random": "^0.0.5",
