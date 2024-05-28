@@ -161,6 +161,7 @@ const StyledView = styled(View)`
   width: 100%;
   overflow-x: hidden;
   z-index: 1;
+  touch-action: auto!important;
 `;
 
 const StyledView2 = styled(View)`
@@ -171,6 +172,7 @@ const StyledView2 = styled(View)`
   overflow-x: hidden;
   z-index: 2;
   bottom: -145dvh;
+  touch-action: auto!important;
   @media (max-width: 768px) {
     bottom: -200dvh;
   }
@@ -184,6 +186,7 @@ const StyledView3 = styled(View)`
   overflow-x: hidden;
   z-index: 2;
   bottom: -280dvh;
+  touch-action: auto!important;
   @media (max-width: 768px) {
     bottom: -300dvh;
   }
@@ -197,6 +200,7 @@ const StyledView4 = styled(View)`
   overflow-x: hidden;
   z-index: 2;
   bottom: -430dvh;
+  touch-action: auto!important;
   @media (max-width: 768px) {
     bottom: -500dvh;
   }
