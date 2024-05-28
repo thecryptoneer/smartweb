@@ -3,6 +3,7 @@ import {MeshProps, useLoader, extend, ReactThreeFiber, useFrame, useThree} from 
 import * as T from "three";
 import {SVGLoader, SVGResult} from "three/examples/jsm/loaders/SVGLoader";
 import {visibleHeightAtZDepth, visibleWidthAtZDepth} from "@/helpers/global";
+import {isMobile, isTablet} from 'react-device-detect';
 
 // Extend Three.js with ExtrudeGeometry
 extend({ExtrudeGeometry: T.ExtrudeGeometry});
@@ -24,6 +25,8 @@ interface ExtrudeProps extends ReactThreeFiber.BufferGeometryProps {
 const Extrude = forwardRef<T.ExtrudeGeometry, ExtrudeProps>(({shapes, options, ...props}, ref) => {
   return <extrudeGeometry ref={ref} args={[shapes, options]} {...props} />;
 });
+
+const isLikelyTouchDevice = isMobile || isTablet;
 
 const Logo = (props: MeshProps) => {
   const svgData: SVGResult = useLoader(SVGLoader, "/smart-web.svg");
@@ -60,25 +63,47 @@ const Logo = (props: MeshProps) => {
         y: -(event.clientY / window.innerHeight) * 2,
       });
     };
+    const handleTouchMove = (event: TouchEvent) => {
+      setMousePos({
+        x: (event.touches[0].clientX / window.innerWidth) * 2 - 1,
+        y: -(event.touches[0].clientY / window.innerHeight) * 2,
+      });
+    }
+    const handleScroll = () => {
+      setIsScrolling(true);
+      setTimeout(() => setIsScrolling(false), 1000);
+    }
+
+    // mouse and mobile touch events
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+
+    // scroll detection to block animation during scroll
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const lerpTime = 0.2;
   const {camera} = useThree();
 
+  const [isScrolling, setIsScrolling] = useState(false);
+
   useFrame(() => {
+    if (isScrolling) return;
     if (!meshRef?.current) return;
+
     const visibleWidth = visibleWidthAtZDepth(meshRef.current.position.z, camera);
     const visibleHeight = visibleHeightAtZDepth(meshRef.current.position.z, camera);
-    const isMobile = window.innerWidth < 959;
     const isLandScape = window.innerWidth > window.innerHeight;
     // Adjust these multipliers to control the sensitivity of the rotation
     const rotationMultiplier = 0.3;
 
-    // larp the rotation of the logo
+    // lerp the rotation of the logo
     meshRef.current.rotation.x = T.MathUtils.lerp(meshRef.current.rotation.x, -mousePos.y * rotationMultiplier, lerpTime);
     meshRef.current.rotation.y = T.MathUtils.lerp(meshRef.current.rotation.y, mousePos.x * rotationMultiplier, lerpTime);
 
@@ -89,7 +114,7 @@ const Logo = (props: MeshProps) => {
     const scaleMultiplier = 0.0045;
     const distance = Math.sqrt(mousePos.x ** 2 + mousePos.y ** 2);
 
-    const scalar = 0.016 + -distance / 2 * scaleMultiplier;
+    const scalar = (isLikelyTouchDevice ? 0.013 : 0.016) + -distance / 2 * scaleMultiplier;
     meshRef.current.scale.setScalar(T.MathUtils.lerp(meshRef.current.scale.x, scalar, lerpTime));
 
     // move the logo in direction of the mouse

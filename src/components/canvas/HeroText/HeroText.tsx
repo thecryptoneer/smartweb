@@ -17,7 +17,9 @@ const HeroText = () => {
     const xRange = [-visibleWidth / 2, visibleWidth / 2];
     const yRange = [-visibleHeight / 2, visibleHeight / 2];
     if (isLandScape && isMobile) {
-      ref.current.position.y = yRange[1] - 1.5;
+      ref.current.position.y = yRange[1] - 1.8;
+    } else if (isMobile) {
+      ref.current.position.y = yRange[1] - 2.9;
     } else if (isLandScape) {
       ref.current.position.y = yRange[1] - 3;
     } else {
@@ -73,8 +75,9 @@ const Headline = styled.h1`
   font-family: Helvetica, Apple, sans-serif, serif;
   font-weight: bolder;
   line-height: 1.2;
+  //text-wrap: balance;
   color: #212121;
-  @media (min-width: 375px) {
+  @media (min-width: 414px) {
     font-size: 1.8rem;
   }
   @media (min-width: 480px) {

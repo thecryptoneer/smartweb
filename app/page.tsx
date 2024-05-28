@@ -159,8 +159,8 @@ const StyledView = styled(View)`
   display: flex;
   height: 110dvh;
   width: 100%;
-  overflow: hidden;
-  z-index: 2;
+  overflow-x: hidden;
+  z-index: 1;
 `;
 
 const StyledView2 = styled(View)`
@@ -168,7 +168,7 @@ const StyledView2 = styled(View)`
   display: flex;
   height: 110dvh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 2;
   bottom: -145dvh;
   @media (max-width: 768px) {
@@ -181,7 +181,7 @@ const StyledView3 = styled(View)`
   display: flex;
   height: 110dvh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 2;
   bottom: -280dvh;
   @media (max-width: 768px) {
@@ -194,7 +194,7 @@ const StyledView4 = styled(View)`
   display: flex;
   height: 110dvh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 2;
   bottom: -430dvh;
   @media (max-width: 768px) {

@@ -1,1 +1,25 @@
-{"theme_color":"#8936FF","background_color":"#2EC6FE","icons":[{"purpose":"maskable","sizes":"512x512","src":"icon512_maskable.png","type":"image/png"},{"purpose":"any","sizes":"512x512","src":"icon512_rounded.png","type":"image/png"}],"orientation":"any","display":"standalone","dir":"left","lang":"en-US","name":"smart web – digital solutions","short_name":"smart web","description":"Expert software and design services at your fingertips. We create outstanding experiences for you and your users.All plans can be paused and continued anytime and as often as you need."}
+{
+  "theme_color": "#212121",
+  "background_color": "#212121",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "https://smartweb.vercel.app/icon.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "https://smartweb.vercel.app/icon-rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "left",
+  "lang": "en-US",
+  "name": "smart web – digital solutions",
+  "short_name": "smart web",
+  "description": "Expert software and design services at your fingertips. We create outstanding experiences for you and your users.All plans can be paused and continued anytime and as often as you need."
+}

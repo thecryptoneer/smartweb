@@ -29,6 +29,7 @@ const Extrude = forwardRef<T.ExtrudeGeometry, ExtrudeProps>(({ shapes, options, 
 });
 
 const Circle = (props: any) => {
+
   const svgData: SVGResult = useLoader(SVGLoader, "/circle-striped.svg");
   const position = props.position ? props.position : [6.2, 3, -4];
   const position1 = props.position1 ? props.position1 : [-6.4, -3, -2];
