@@ -33,39 +33,39 @@ export const plans: Plan[] = [
   {
     baseBillingCycle: 5,
     standard: {
-      price: 695,
+      price: 995,
       currency: "USD",
       perDay: 139
     },
     pro: {
-      price: 1195,
+      price: 1595,
       currency: "USD",
       perDay: 239
     },
     expert: {
-      price: 1795,
+      price: 2295,
       currency: "USD",
       perDay: 359
     }
   },
-  {
-    baseBillingCycle: 1,
-    standard: {
-      price: 295,
-      currency: "USD",
-      perDay: 295
-    },
-    pro: {
-      price: 495,
-      currency: "USD",
-      perDay: 495
-    },
-    expert: {
-      price: 745,
-      currency: "USD",
-      perDay: 745
-    }
-  },
+  // {
+  //   baseBillingCycle: 1,
+  //   standard: {
+  //     price: 295,
+  //     currency: "USD",
+  //     perDay: 295
+  //   },
+  //   pro: {
+  //     price: 495,
+  //     currency: "USD",
+  //     perDay: 495
+  //   },
+  //   expert: {
+  //     price: 745,
+  //     currency: "USD",
+  //     perDay: 745
+  //   }
+  // },
   {
     baseBillingCycle: 60,
     standard: {
@@ -74,12 +74,12 @@ export const plans: Plan[] = [
       perDay: 83.25
     },
     pro: {
-      price: 8995,
+      price: 8495,
       currency: "USD",
       perDay: 149.92
     },
     expert: {
-      price: 12595,
+      price: 11995,
       currency: "USD",
       perDay: 209.92
     }
@@ -87,17 +87,17 @@ export const plans: Plan[] = [
   {
     baseBillingCycle: 90,
     standard: {
-      price: 7195,
+      price: 8495,
       currency: "USD",
       perDay: 79.94
     },
     pro: {
-      price: 11995,
+      price: 12995,
       currency: "USD",
       perDay: 133.28
     },
     expert: {
-      price: 18995,
+      price: 19995,
       currency: "USD",
       perDay: 211.06
     }

@@ -6,6 +6,7 @@
       "recommended": "Best for basic tasks",
       "idealFor": "We cover all the basics for you",
       "weeklyRequests": "up to 3",
+      "dailyRequests": "1",
       "requestComplexity": "basic",
       "design_examples": [
         "Basic design requests",
@@ -32,7 +33,7 @@
         "Cookie banner"
       ],
       "support": "Email support",
-      "calls": "1 call / month",
+      "calls": "1x 30min call / month",
       "pauseFeature": true,
       "parallelRequests": "max. 1"
     },
@@ -41,7 +42,8 @@
       "price": "$4,995 / 30 active days*",
       "recommended": "Best for advanced tasks",
       "idealFor": "Feels like a senior team member",
-      "weeklyRequests": "up to 6",
+      "dailyRequests": "1",
+      "weeklyRequests": "up to 5",
       "requestComplexity": "basic - advanced",
       "design_examples": [
         "Advanced design requests",
@@ -71,7 +73,7 @@
         "Technical documentation"
       ],
       "support": "Priority (within 24h)",
-      "calls": "1 call / week",
+      "calls": "1x 30min call / week",
       "pauseFeature": true,
       "parallelRequests": "max. 1"
     },
@@ -80,7 +82,8 @@
       "price": "$6,995 / 30 active days*",
       "recommended": "best for complex tasks",
       "idealFor": "Feels like a 10x team member",
-      "weeklyRequests": "up to 12",
+      "dailyRequests": "2",
+      "weeklyRequests": "up to 10",
       "requestComplexity": "basic - complex",
       "design_examples": [
         "Complex design requests",
@@ -113,7 +116,7 @@
         "browser games"
       ],
       "support": "Priority (within 12h)",
-      "calls": "2 calls / week",
+      "calls": "2x 30min call / week",
       "pauseFeature": true,
       "parallelRequests": "max. 2"
     }

@@ -32,45 +32,46 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
       <Spacer type="block"/>
 
       <div style={{display: "flex", flexDirection: "column"}}>
-        <SectionSubHeadline>Choose the amount of active days you'll top up</SectionSubHeadline>
-        <ResponsiveFlexRowCol>
-          <p style={{textAlign: "center"}}>Renew after</p>
+        <SectionSubHeadline>Select how many active days to top up!</SectionSubHeadline>
+        <Spacer/>
+        <ResponsiveFlexRowCol >
+          <p style={{display: "flex", alignItems: "center", textAlign: "center"}}>Renew subscription after</p>
           <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180'}}
-            onClick={
-            () => setBillingData(plans[2])
-          }>
-            1
-          </StyledButton>
-          <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}
+            style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
             onClick={
             () => setBillingData(plans[1])
           }>
             5
           </StyledButton>
+          {/*<StyledButton*/}
+          {/*  style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}*/}
+          {/*  onClick={*/}
+          {/*  () => setBillingData(plans[1])*/}
+          {/*}>*/}
+          {/*  5*/}
+          {/*</StyledButton>*/}
           <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180'}}
+            style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
             onClick={
             () => setBillingData(plans[0])
           }>
             30
           </StyledButton>
           <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[3].baseBillingCycle ? "#000" : '#21212180'}}
+            style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
             onClick={
-            () => setBillingData(plans[3])
+            () => setBillingData(plans[2])
           }>
             60
           </StyledButton>
           <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[4].baseBillingCycle ? "#000" : '#21212180'}}
+            style={{background: billingData.baseBillingCycle === plans[3].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
             onClick={
-            () => setBillingData(plans[4])
+            () => setBillingData(plans[3])
           }>
             90
           </StyledButton>
-          <p style={{textAlign: "center"}}>active day{billingData.baseBillingCycle === 1 ? '' : 's'} used</p>
+          <p style={{display: "flex", alignItems: "center", textAlign: "center"}}>active day{billingData.baseBillingCycle === 1 ? '' : 's'} have been used.</p>
         </ResponsiveFlexRowCol>
       </div>
       <Spacer type="block"/>
@@ -109,6 +110,7 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
                 [
                   {text: "Task complexity", value: plan.requestComplexity},
                   {text: "Max. weekly tasks", value: plan.weeklyRequests},
+                  {text: "Max. daily tasks", value: plan.dailyRequests},
                   {text: "Support", value: plan.support},
                   {text: "Calls", value: plan.calls},
                   // {text: "Latest auto-renewal", value: "after 12 months"},
@@ -162,6 +164,8 @@ export const ResponsiveFlexRowCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 768px) {
     flex-direction: row;
   }
