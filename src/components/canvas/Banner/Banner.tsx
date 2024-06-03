@@ -78,8 +78,6 @@ const Banner = (props) => {
   }, [gap, offset]);
   const {camera} = useThree();
 
-  const [freezeY, setFreezeY] = useState(false);
-
   useFrame((state) => {
     const delta = state.clock.getDelta();
     if (!groupRef?.current) return;
@@ -93,25 +91,16 @@ const Banner = (props) => {
       if (ref) {
 
         if (isLandScape && isMobile) {
-          if (!freezeY) {
-            ref.position.y = -visibleHeight / 2 + 0.5;
-          }
+          ref.position.y = -visibleHeight / 2 + 0.5;
         } else if (isLandScape) {
-          if (!freezeY) {
-            ref.position.y = -visibleHeight / 2 + 1;
-          }
+          ref.position.y = -visibleHeight / 2 + 1;
         } else {
-          if (!freezeY) {
-            ref.position.y = -visibleHeight / 2 + 1;
-          }
+          ref.position.y = -visibleHeight / 2 + 1;
         }
-        if (freezeY) {
-          ref.position.z = 0.1;
-        }
-        setFreezeY(true);
+        ref.position.z = 0.1;
 
-        // scroll position
-        ref.position.x -= speed * delta;
+
+        ref.position.x -= state.clock.getElapsedTime() * 1 / (speed * state.clock.elapsedTime - delta);
 
         if (ref.position.x < threshold) {
           const lastChip = chipRef.current.reduce((prev, curr) => {

@@ -32,45 +32,46 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
       <Spacer type="block"/>
 
       <div style={{display: "flex", flexDirection: "column"}}>
-        <SectionSubHeadline>Select your subscription</SectionSubHeadline>
-        <Text>You decide with how many days you start</Text>
-        <Row style={{justifyContent: "center"}}>
+        <SectionSubHeadline>Choose the amount of active days you'll top up</SectionSubHeadline>
+        <ResponsiveFlexRowCol>
+          <p style={{textAlign: "center"}}>Renew after</p>
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180'}}
             onClick={
             () => setBillingData(plans[2])
           }>
-            1 day
+            1
           </StyledButton>
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}
             onClick={
             () => setBillingData(plans[1])
           }>
-            5 days
+            5
           </StyledButton>
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180'}}
             onClick={
             () => setBillingData(plans[0])
           }>
-            30 days
+            30
           </StyledButton>
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[3].baseBillingCycle ? "#000" : '#21212180'}}
             onClick={
             () => setBillingData(plans[3])
           }>
-            60 days
+            60
           </StyledButton>
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[4].baseBillingCycle ? "#000" : '#21212180'}}
             onClick={
             () => setBillingData(plans[4])
           }>
-            90 days
+            90
           </StyledButton>
-        </Row>
+          <p style={{textAlign: "center"}}>active day{billingData.baseBillingCycle === 1 ? '' : 's'} used</p>
+        </ResponsiveFlexRowCol>
       </div>
       <Spacer type="block"/>
 
@@ -95,7 +96,7 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
               <br/>
               <p style={{textAlign: "center", fontSize: "12px"}}>
                 {
-                  billingData.baseBillingCycle === 1 ? "You will be charged daily until you pause the subscription." : `*We will only charge you again once you've used ${billingData.baseBillingCycle} days
+                  billingData.baseBillingCycle === 1 ? "You will be charged daily unless you pause the subscription." : `*We will only charge you again once you've used ${billingData.baseBillingCycle} days
                 of active service. We do not count paused days.`
                 }
                 </p>
@@ -156,6 +157,15 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
     </div>
   );
 };
+
+export const ResponsiveFlexRowCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
 
 export const PlanCard = styled.div`
   //width: 100%;
