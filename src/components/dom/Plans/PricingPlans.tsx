@@ -95,7 +95,7 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
               <br/>
               <p style={{textAlign: "center", fontSize: "12px"}}>
                 {
-                  billingData.baseBillingCycle === 1 ? "Your will be charged daily until you pause the subscription." : `*We will only charge you again once you've used ${billingData.baseBillingCycle} days
+                  billingData.baseBillingCycle === 1 ? "You will be charged daily until you pause the subscription." : `*We will only charge you again once you've used ${billingData.baseBillingCycle} days
                 of active service. We do not count paused days.`
                 }
                 </p>
