@@ -57,17 +57,17 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
           }>
             30
           </StyledButton>
+          {/*<StyledButton*/}
+          {/*  style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}*/}
+          {/*  onClick={*/}
+          {/*  () => setBillingData(plans[2])*/}
+          {/*}>*/}
+          {/*  60*/}
+          {/*</StyledButton>*/}
           <StyledButton
             style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
             onClick={
             () => setBillingData(plans[2])
-          }>
-            60
-          </StyledButton>
-          <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[3].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
-            onClick={
-            () => setBillingData(plans[3])
           }>
             90
           </StyledButton>

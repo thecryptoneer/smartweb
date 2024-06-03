@@ -66,24 +66,24 @@ export const plans: Plan[] = [
   //     perDay: 745
   //   }
   // },
-  {
-    baseBillingCycle: 60,
-    standard: {
-      price: 4995,
-      currency: "USD",
-      perDay: 83.25
-    },
-    pro: {
-      price: 8495,
-      currency: "USD",
-      perDay: 149.92
-    },
-    expert: {
-      price: 11995,
-      currency: "USD",
-      perDay: 209.92
-    }
-  },
+  // {
+  //   baseBillingCycle: 60,
+  //   standard: {
+  //     price: 4995,
+  //     currency: "USD",
+  //     perDay: 83.25
+  //   },
+  //   pro: {
+  //     price: 8495,
+  //     currency: "USD",
+  //     perDay: 149.92
+  //   },
+  //   expert: {
+  //     price: 11995,
+  //     currency: "USD",
+  //     perDay: 209.92
+  //   }
+  // },
   {
     baseBillingCycle: 90,
     standard: {

@@ -42,8 +42,8 @@
       "price": "$4,995 / 30 active days*",
       "recommended": "Best for advanced tasks",
       "idealFor": "Feels like a senior team member",
-      "dailyRequests": "1",
-      "weeklyRequests": "up to 5",
+      "dailyRequests": "2",
+      "weeklyRequests": "up to 6",
       "requestComplexity": "basic - advanced",
       "design_examples": [
         "Advanced design requests",
@@ -82,8 +82,8 @@
       "price": "$6,995 / 30 active days*",
       "recommended": "best for complex tasks",
       "idealFor": "Feels like a 10x team member",
-      "dailyRequests": "2",
-      "weeklyRequests": "up to 10",
+      "dailyRequests": "3",
+      "weeklyRequests": "up to 12",
       "requestComplexity": "basic - complex",
       "design_examples": [
         "Complex design requests",
