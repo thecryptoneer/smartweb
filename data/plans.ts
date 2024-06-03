@@ -20,12 +20,12 @@ export const plans: Plan[] = [
       perDay: 99.95
     },
     pro: {
-      price: 4995,
+      price: 4795,
       currency: "USD",
       perDay: 169.95
     },
     expert: {
-      price: 7995,
+      price: 7495,
       currency: "USD",
       perDay: 249.95
     }
@@ -43,7 +43,7 @@ export const plans: Plan[] = [
       perDay: 239
     },
     expert: {
-      price: 2295,
+      price: 2495,
       currency: "USD",
       perDay: 359
     }
@@ -87,12 +87,12 @@ export const plans: Plan[] = [
   {
     baseBillingCycle: 90,
     standard: {
-      price: 8495,
+      price: 7995,
       currency: "USD",
       perDay: 79.94
     },
     pro: {
-      price: 12995,
+      price: 12795,
       currency: "USD",
       perDay: 133.28
     },
