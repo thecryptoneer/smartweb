@@ -110,8 +110,8 @@ export default function Page() {
                   {/*<AiSection />*/}
                   {/*<Spacer type="section"/>*/}
 
-                  <BillingSection />
-                  <Spacer type="section"/>
+                  {/*<BillingSection />*/}
+                  {/*<Spacer type="section"/>*/}
 
                   {/*<WhyUsSection />*/}
                   {/*<Spacer type="section"/>*/}

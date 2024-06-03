@@ -1,14 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import plansData from '../../../../data/plans.json';
 import {Text, Row, SectionHeadline, SectionSubHeadline, StyledButton, Container} from "@/components/dom/Styled";
 import Spacer from "@/components/dom/Spacer/Spacer";
 import styled from "styled-components";
+import {plans} from "../../../../data/plans";
 
 type PricingPlanProps = {
   selectedPlan: number;
   setSelectedPlan: (index: number) => void;
 }
+
 const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
+
+  const [billingData, setBillingData] = useState(plans[0]);
+
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+      //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+
   return (
     <div style={{zIndex: "2", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", width: "100%"}}>
       <SectionHeadline id="plans">Select your membership</SectionHeadline>
@@ -17,6 +30,50 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
         From basic tasks to complex projects, we offer three plans to meet your needs.
       </Text>
       <Spacer type="block"/>
+
+      <div style={{display: "flex", flexDirection: "column"}}>
+        <SectionSubHeadline>Select your subscription</SectionSubHeadline>
+        <Text>You decide with how many days you start</Text>
+        <Row style={{justifyContent: "center"}}>
+          <StyledButton
+            style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180'}}
+            onClick={
+            () => setBillingData(plans[2])
+          }>
+            1 day
+          </StyledButton>
+          <StyledButton
+            style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}
+            onClick={
+            () => setBillingData(plans[1])
+          }>
+            5 days
+          </StyledButton>
+          <StyledButton
+            style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180'}}
+            onClick={
+            () => setBillingData(plans[0])
+          }>
+            30 days
+          </StyledButton>
+          <StyledButton
+            style={{background: billingData.baseBillingCycle === plans[3].baseBillingCycle ? "#000" : '#21212180'}}
+            onClick={
+            () => setBillingData(plans[3])
+          }>
+            60 days
+          </StyledButton>
+          <StyledButton
+            style={{background: billingData.baseBillingCycle === plans[4].baseBillingCycle ? "#000" : '#21212180'}}
+            onClick={
+            () => setBillingData(plans[4])
+          }>
+            90 days
+          </StyledButton>
+        </Row>
+      </div>
+      <Spacer type="block"/>
+
       <Row style={{width: "100%", maxWidth: "1280px", flexWrap: "wrap", zIndex: "2"}}>
         {plansData.plans.map((plan, index) => (
           <PlanCard key={index} style={{
@@ -30,10 +87,18 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
                 backgroundColor: index === 1 ? '#212121' : '#21212120',
                 color: index === 1 ? '#fff' : '#212121'
               }}>{plan.recommended}</RecommendedChip> : <div style={{height: "20px"}}></div>}
-              <PlanPrice>{plan.price}</PlanPrice>
+              <PlanPrice>{
+                index === 0 ? `${formatter.format(billingData.standard.price)} / ${billingData.baseBillingCycle} active day${billingData.baseBillingCycle === 1 ? '' : 's'}` :
+                  index === 1 ? `${formatter.format(billingData.pro.price)} / ${billingData.baseBillingCycle} active day${billingData.baseBillingCycle === 1 ? '' : 's'}` :
+                    `${formatter.format(billingData.expert.price)} / ${billingData.baseBillingCycle} active day${billingData.baseBillingCycle === 1 ? '' : 's'}`
+              }</PlanPrice>
               <br/>
-              <p style={{textAlign: "center", fontSize: "12px"}}>*We will only charge you again once you&apos;ve used 30 days
-                of active service. We don&apos;t count paused days.</p>
+              <p style={{textAlign: "center", fontSize: "12px"}}>
+                {
+                  billingData.baseBillingCycle === 1 ? "Your will be charged daily until you pause the subscription." : `*We will only charge you again once you've used ${billingData.baseBillingCycle} days
+                of active service. We do not count paused days.`
+                }
+                </p>
               <SectionSubHeadline
                 style={{fontSize: "18px", margin: "32px 0 32px 0", textAlign: "center", width: "100%"}}>{plan.idealFor}
               </SectionSubHeadline>

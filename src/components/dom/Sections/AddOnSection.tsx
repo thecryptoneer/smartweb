@@ -16,13 +16,13 @@ export default function AddOnSection() {
       </Text>
       <Spacer/>
 
-      <StyledButton
-        style={{marginTop: "0"}}
-        onClick={() => setShowAddOns(!showAddOns)}>
-        {
-          showAddOns ? "Hide" : "Show"
-        } Add-Ons
-      </StyledButton>
+      {/*<StyledButton*/}
+      {/*  style={{marginTop: "0"}}*/}
+      {/*  onClick={() => setShowAddOns(!showAddOns)}>*/}
+      {/*  {*/}
+      {/*    showAddOns ? "Hide" : "Show"*/}
+      {/*  } Add-Ons*/}
+      {/*</StyledButton>*/}
 
       {
         showAddOns && (
