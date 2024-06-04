@@ -122,7 +122,7 @@ export default function Page() {
 
       <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}>
         <Suspense fallback={null}>
-          <ScrollControls damping={0.01} pages={scrollDistanceY}>
+          <ScrollControls damping={0} pages={scrollDistanceY}>
 
             <Scroll>
               <HeroScene />
