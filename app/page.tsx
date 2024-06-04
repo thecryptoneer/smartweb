@@ -56,12 +56,10 @@ export default function Page() {
     }
   }, []);
 
-  useEffect(() => {
-    // wait for the refs to be set
-    setTimeout(() => {
-      placeSectionsBasedOnDisplay();
-    }, 1000);
-  }, []);
+  // useInterval
+  setInterval(() => {
+    placeSectionsBasedOnDisplay();
+  }, 500)
 
   const [scrollDistanceY, setScrollDistanceY] = useState(2);
 
@@ -124,7 +122,7 @@ export default function Page() {
 
       <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}>
         <Suspense fallback={null}>
-          <ScrollControls damping={0.1} pages={scrollDistanceY}>
+          <ScrollControls damping={0.01} pages={scrollDistanceY}>
 
             <Scroll>
               <HeroScene />
