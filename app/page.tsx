@@ -31,9 +31,12 @@ import GetStartedSection from "@/components/dom/Sections/GetStartedSection";
 import {Column, Container} from "@/components/dom/Styled";
 import Spacer from "@/components/dom/Spacer/Spacer";
 import BenefitsSection from "@/components/dom/Sections/BenefitsSection";
+import {Plan, plans} from "../data/plans";
 
 export default function Page() {
   const [selectedPlan, setSelectedPlan] = useState(1);
+  const [billingData, setBillingData] = useState<Plan>(plans[0]);
+
   return (
     <>
       <DivColStartCenter>
@@ -95,10 +98,15 @@ export default function Page() {
                   <BenefitsSection />
                   <Spacer type="section"/>
 
-                  <PricingPlans selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan}/>
+                  <PricingPlans
+                    selectedPlan={selectedPlan}
+                    setSelectedPlan={setSelectedPlan}
+                    billingData={billingData}
+                    setBillingData={setBillingData}
+                  />
                   <Spacer type=""/>
 
-                  <CTASection selectedPlan={selectedPlan}/>
+                  <CTASection selectedPlan={selectedPlan} billingData={billingData}/>
                   <Spacer type="section"/>
 
                   <ComplexitySection />

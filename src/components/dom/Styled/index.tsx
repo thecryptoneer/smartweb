@@ -76,6 +76,20 @@ export const StyledButton = styled.button`
   font-weight: bold;
 `;
 
+export const StyledAnchor = styled.a`
+  background: #212121;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+`;
+
 export const Text = styled.p`
   font-size: 1rem;
   text-align: center;

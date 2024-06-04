@@ -3,20 +3,19 @@ import plansData from '../../../../data/plans.json';
 import {Text, Row, SectionHeadline, SectionSubHeadline, StyledButton, Container} from "@/components/dom/Styled";
 import Spacer from "@/components/dom/Spacer/Spacer";
 import styled from "styled-components";
-import {plans} from "../../../../data/plans";
+import {Plan, plans} from "../../../../data/plans";
 
 type PricingPlanProps = {
   selectedPlan: number;
   setSelectedPlan: (index: number) => void;
+  billingData: Plan;
+  setBillingData: (data: any) => void;
 }
 
-const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
-
-  const [billingData, setBillingData] = useState(plans[0]);
-
-    const formatter = new Intl.NumberFormat('en-US', {
+const PricingPlans = ({selectedPlan, setSelectedPlan, billingData, setBillingData}: PricingPlanProps) => {
+  const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'EUR',
       maximumFractionDigits: 0
       //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
@@ -41,7 +40,7 @@ const PricingPlans = ({selectedPlan, setSelectedPlan}: PricingPlanProps) => {
             onClick={
             () => setBillingData(plans[1])
           }>
-            5
+            05
           </StyledButton>
           {/*<StyledButton*/}
           {/*  style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}*/}

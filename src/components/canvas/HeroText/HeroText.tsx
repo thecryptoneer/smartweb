@@ -44,7 +44,7 @@ const HeroText = () => {
 
           <Headline>
             A software and design
-            <br/>agency with a twist
+            <br/>subscription with a twist
           </Headline>
 
           <SubHeadline>{getDynamicSlogan()}</SubHeadline>

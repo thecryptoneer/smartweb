@@ -1,6 +1,7 @@
 {
   "plans": [
     {
+      "id": "standard",
       "name": "Standard",
       "price": "$2,995 / 30 active days*",
       "recommended": "Best for basic tasks",
@@ -38,6 +39,7 @@
       "parallelRequests": "max. 1"
     },
     {
+      "id": "pro",
       "name": "Pro+",
       "price": "$4,995 / 30 active days*",
       "recommended": "Best for advanced tasks",
@@ -78,6 +80,7 @@
       "parallelRequests": "max. 1"
     },
     {
+      "id": "expert",
       "name": "Expert",
       "price": "$6,995 / 30 active days*",
       "recommended": "best for complex tasks",
