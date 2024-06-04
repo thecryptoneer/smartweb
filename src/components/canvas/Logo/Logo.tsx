@@ -33,7 +33,8 @@ const Logo = (props: MeshProps) => {
 
   // Calculate the bounding box and center the shapes
   const shapes = useMemo(() => {
-    const shapePaths = svgData.paths.flatMap((path) => path.toShapes(true));
+    const shapePaths = svgData?.paths?.flatMap((path) => path.toShapes(true));
+    if (!shapePaths) return [];
 
     const center = new T.Box2().setFromPoints(shapePaths[0].getPoints()).getCenter(new T.Vector2());
 
@@ -55,6 +56,12 @@ const Logo = (props: MeshProps) => {
 
   const meshRef = useRef<T.Group>(null);
   const [mousePos, setMousePos] = useState({x: 0, y: 0});
+  const [isScrolling, setIsScrolling] = useState(false);
+
+
+  useEffect(() => {
+    console.log('isScrolling', isScrolling)
+  }, [isScrolling]);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -91,8 +98,6 @@ const Logo = (props: MeshProps) => {
   const lerpTime = 0.2;
   const {camera} = useThree();
 
-  const [isScrolling, setIsScrolling] = useState(false);
-
   useFrame(() => {
     if (isScrolling) return;
     if (!meshRef?.current) return;
@@ -106,6 +111,11 @@ const Logo = (props: MeshProps) => {
     // lerp the rotation of the logo
     meshRef.current.rotation.x = T.MathUtils.lerp(meshRef.current.rotation.x, -mousePos.y * rotationMultiplier, lerpTime);
     meshRef.current.rotation.y = T.MathUtils.lerp(meshRef.current.rotation.y, mousePos.x * rotationMultiplier, lerpTime);
+
+    const hasXAndY = meshRef.current.position.x && meshRef.current.position.y;
+    if (hasXAndY && isMobile || isTablet) {
+      return;
+    }
 
     const x = mousePos.x;
     const y = mousePos.y;

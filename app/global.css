@@ -151,7 +151,14 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+}
+
+body {
+    overscroll-behavior: none;
+    background: #f0f0f0;
+    color: black;
+    font-family: 'Inter var', sans-serif;
+    font-feature-settings: 'cv06' 1;
 }
 
 @keyframes dottedBackgroundAnimation {

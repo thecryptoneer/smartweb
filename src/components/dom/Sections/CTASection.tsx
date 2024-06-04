@@ -2,7 +2,6 @@ import plansData from "../../../../data/plans.json";
 import React, {useMemo} from "react";
 import {RowCentered, StyledAnchor, StyledButton} from "@/components/dom/Styled";
 import {Plan, plans} from "../../../../data/plans";
-import styled from "styled-components";
 
 type CTASectionProps = {
   selectedPlan: number;

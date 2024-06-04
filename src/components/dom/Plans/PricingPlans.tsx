@@ -35,41 +35,43 @@ const PricingPlans = ({selectedPlan, setSelectedPlan, billingData, setBillingDat
         <Spacer/>
         <ResponsiveFlexRowCol >
           <p style={{display: "flex", alignItems: "center", textAlign: "center"}}>Renew subscription after</p>
-          <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
-            onClick={
-            () => setBillingData(plans[1])
-          }>
-            05
-          </StyledButton>
-          {/*<StyledButton*/}
-          {/*  style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}*/}
-          {/*  onClick={*/}
-          {/*  () => setBillingData(plans[1])*/}
-          {/*}>*/}
-          {/*  5*/}
-          {/*</StyledButton>*/}
-          <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
-            onClick={
-            () => setBillingData(plans[0])
-          }>
-            30
-          </StyledButton>
-          {/*<StyledButton*/}
-          {/*  style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}*/}
-          {/*  onClick={*/}
-          {/*  () => setBillingData(plans[2])*/}
-          {/*}>*/}
-          {/*  60*/}
-          {/*</StyledButton>*/}
-          <StyledButton
-            style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
-            onClick={
-            () => setBillingData(plans[2])
-          }>
-            90
-          </StyledButton>
+          <div style={{display: "flex", alignItems: "center", textAlign: "center", gap: "10px"}}>
+            <StyledButton
+              style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
+              onClick={
+                () => setBillingData(plans[1])
+              }>
+              05
+            </StyledButton>
+            {/*<StyledButton*/}
+            {/*  style={{background: billingData.baseBillingCycle === plans[1].baseBillingCycle ? "#000" : '#21212180'}}*/}
+            {/*  onClick={*/}
+            {/*  () => setBillingData(plans[1])*/}
+            {/*}>*/}
+            {/*  5*/}
+            {/*</StyledButton>*/}
+            <StyledButton
+              style={{background: billingData.baseBillingCycle === plans[0].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
+              onClick={
+                () => setBillingData(plans[0])
+              }>
+              30
+            </StyledButton>
+            {/*<StyledButton*/}
+            {/*  style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}*/}
+            {/*  onClick={*/}
+            {/*  () => setBillingData(plans[2])*/}
+            {/*}>*/}
+            {/*  60*/}
+            {/*</StyledButton>*/}
+            <StyledButton
+              style={{background: billingData.baseBillingCycle === plans[2].baseBillingCycle ? "#000" : '#21212180', margin: "0"}}
+              onClick={
+                () => setBillingData(plans[2])
+              }>
+              90
+            </StyledButton>
+          </div>
           <p style={{display: "flex", alignItems: "center", textAlign: "center"}}>active day{billingData.baseBillingCycle === 1 ? '' : 's'} have been used.</p>
         </ResponsiveFlexRowCol>
       </div>

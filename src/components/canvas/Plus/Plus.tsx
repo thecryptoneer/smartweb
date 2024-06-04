@@ -33,7 +33,8 @@ const PlusSvg = (props: MeshProps) => {
 
   // Calculate the bounding box and center the shapes
   const shapes = useMemo(() => {
-    const shapePaths = svgData.paths.flatMap((path) => path.toShapes(true));
+    const shapePaths = svgData?.paths?.flatMap((path) => path.toShapes(true));
+    if (!shapePaths) return [];
 
     // Get the center of the bounding box
     const center = new T.Box2().setFromPoints(shapePaths[0].getPoints()).getCenter(new T.Vector2());

@@ -16,9 +16,10 @@ export default function RootLayout({
         <html lang="en">
             <head />
             <body>
-                <StyledComponentsRegistry>
-                    <Layout>{children}</Layout>
-                </StyledComponentsRegistry>
+            {children}
+                {/*<StyledComponentsRegistry>*/}
+                {/*    <Layout>{children}</Layout>*/}
+                {/*</StyledComponentsRegistry>*/}
             </body>
         </html>
     );

@@ -45,8 +45,9 @@ const Circle = (props: any) => {
 
   // Calculate the bounding box and center the shapes
   const shapes = useMemo(() => {
-    const shapePaths = svgData.paths.flatMap((path) => path.toShapes(true));
+    const shapePaths = svgData?.paths?.flatMap((path) => path.toShapes(true));
     const boundingBox = new T.Box2();
+    if (!shapePaths) return [];
 
     // Expand bounding box to include all shapes
     shapePaths.forEach((shape) => {

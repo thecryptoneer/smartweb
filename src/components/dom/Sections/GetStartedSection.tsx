@@ -1,12 +1,19 @@
 import plansData from "../../../../data/plans.json";
-import React from "react";
+import React, {useMemo} from "react";
 import {RowCentered, SectionHeadline, StyledAnchor, StyledButton, Text} from "@/components/dom/Styled";
 import Spacer from "@/components/dom/Spacer/Spacer";
+import {Plan} from "../../../../data/plans";
 
 type GetStartedProps = {
   selectedPlan: number;
+  billingData: Plan;
 };
-const GetStartedSection: React.FC<GetStartedProps> = ({ selectedPlan }) => {
+const GetStartedSection: React.FC<GetStartedProps> = ({ selectedPlan, billingData }) => {
+
+  const paymentLink = useMemo( () => {
+    return billingData ? billingData[plansData.plans[selectedPlan].id].paymentLink : null;
+  }, [billingData, selectedPlan]);
+
   return (
     <div style={{zIndex: "2", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column"}}>
       <SectionHeadline>Lets get started</SectionHeadline>
@@ -29,7 +36,10 @@ const GetStartedSection: React.FC<GetStartedProps> = ({ selectedPlan }) => {
         </StyledAnchor>
         {
           selectedPlan !== null ? (
-            <StyledButton style={{minWidth: "320px"}}>Subscribe as {plansData.plans[selectedPlan].name}</StyledButton>
+            <StyledAnchor
+              href={paymentLink}
+              target={'_blank'} rel={'noreferrer nofollow'}
+              style={{minWidth: "320px"}}>Subscribe as {plansData.plans[selectedPlan].name}</StyledAnchor>
           ) : (
             <StyledButton style={{minWidth: "320px"}}disabled={true}>Select Plan</StyledButton>
           )
